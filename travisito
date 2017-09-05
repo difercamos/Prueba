@@ -1,0 +1,19 @@
+language: python
+python:
+- 3.5.2
+install:
+- pip install -r requirements.txt
+script: nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: Xh+AhgJUGyQxdvyFJrau7grLkbKOgNxxjLtisscIaZA0VsWrtnd49UTpB4i18HdyoaDZslFaB9okgy5P3VUlEXF8/w4BCOpvI0RdKXU7Psd4N2PlblTlOR+CZO4rpo6Ml6whXGgkFiusAuRzuVGgOj9yOQ4GmIDgRbkDcvl1XWhqZnZCwyAC3JJ1I828M8oCOHdU6yMJEawjZZB1a+rPxc0KI3rEwLUiAoMoXt1NFZerrJz4yr9/3Hz/tm//CssVL63oL6bWS9Yyb6IgzYxqgfkILr0fR1lte46XLMB/Rif8cWHmb/XzllCl0WHs/XbeO9r+fsVfW5aTPJwwVjN1Jq/0c66jsPf5KIrXep/WERAe3L1itKmTdfVXcBCT9hwUycT1zUPdVv1Wj2Jlpjo8CJFZWCHgFFztgLLo9XjCP+gNu7NqUHlIqRtowTSHHFhVSQT8SvN/UyeJg7ohcWYU4tE/cRwOfhE4AAYUxe2CkJvs38DiEh8b6dV1bBCLpj4VgBfWaSafsVAq6KkgPkpZklr9hRK2fS1sL9/0MKSolvteLF7dPDVAK1BYxGjzJcGI3fwPcU8aeGORMfxgvm221dAGxCeRSYH5w+sSZe6kcKwh852ngM9aWyAUsi+NvuVV1M0I10kJrIeaGXGj+kxOIXY6onpqk0K+XCpjOsDq4wk=
+  app:
+    master:
+  on:
+    repo: difercamos/prueba
+  run:
+  - python manage.py collectstatic --no-input
+# notifications:
+#   slack:
+#     secure: JADktG+qZQuaFQpsrEL3jH8e/6uDrY0YzmaY7uIOcCji3b29y22GPPLON/dwtSLrXTtuZIzWEmoaKUJbLeZGKeZ5RYCaLFzktxwrOPkAM8ggPUT7eI9IbZOJoDcyauNzp/2iLC4dFJiqSt6TU+b5uNtOuOYaJRy3T2zXMQIzwVwjfUy+YfK15fM1nnuX4EGFxk7OYpNyfYRza1qpspbl7ahH0KSOWM5Tff2o2fy0ELTM+R55SsXqNSHz5zSGpwIB/asFnGJWY0VdB05dbI9Uh28g2yDiRYWZWFYHKpE3qvEFL+Ev5cOXNXO8Vn0IFHnmkeJsT8+QTIzLA0tLlA8P/MCn8gZpJvOG6Jv8TporGTmNT2Ie1+rtAfU8onkwHBrSpAHTsuyzt42Wq8iSEbskfcFoBwvPHBxZXZFzTkIIG4muDotnuUNj4pdzo5fa72Jb9GFprI3QtBTlHDW5HVTY7Me6tvffkt2XMFFQKVfsXaO+na0AyNPu+Ev4AQh9D4z3nDMOc6JL1k6AApSM6ulFt2Fc/9Z98pHoTKR8fCtjGKR5M7E3gbfvBlAr21mUYGfvR1j/oMr7kkwYQsqa7osjH5Cf3uSbTyrKKVn94xEtwGNjjG4Mi5loRDR5OXVsB+7GLnjWoq62TwmAPNCKsbrlDLmRlsZ3jrK+/uGthF6cnbY=

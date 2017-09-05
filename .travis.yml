@@ -1,0 +1,13 @@
+language: python
+python:
+- 3.5.2
+install:
+- pip install -r requirements.txt
+script: nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: aRga0NEeSu9I/3t9DQfmrY7xGzKwkgYXpVPTPKuqOBerosUpYRiWLOOEhwBhgZXL4EspStuTLm92Q5RVezgRgtlOFvPRu8VeNNYEBU5H2Apeo1GDK+eGkvfANfsrf/zP9+RpGJbiMHUpBv6gqCdH8KfnWfecSvgJNCkBGZrW/7dXz7RjEtJMbOd3YVZPqvdhrXCefkTUJclwkb0VnH8ZLlk4VLx1Sf+E3o0LLkI68tinkM+N/JorqOCfvNw584exvnEyFPTUBS1nxPPeC64jrrcu2JGRcm6nuDy2WdQB0WhKDrfmpzNr4j0f43MPr7dRUjac5wm+uxHM20rN9wMlhzfP7th6DTLwstWwccTGPQyAzk18tFhDJHEYOqwHUBWn8dh5BVB+xor5CjJLQ12bq5e9FGGwynQXdEQejJ+d+SbyOaj0ox2utvb7rPOC+PChD+amg29zwoWrg/TxOM5siPBDfNhiFMUB+di+n+BW8VnLSNgyCCTfyTXCHe5Edpye426u4HNZvvq7SkRvY16Prck/GkEXPnYUd7IWgyX25Iv4IXMw1lIWOosNPGckn3rfazEy40RZ2WiKzY5Tn0GOhDFMPDno5alEhUj3+FOz7Oh2HMu3F73DDF9vmwcvm8GJtbiQVC1Ueeum0snRgl8GhsY/zR2xpWdqnbsJRIqd81U=
+  app: pruebadik
+  on:
+    repo: difercamos/prueba
